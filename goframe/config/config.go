@@ -3,10 +3,9 @@ package config
 import (
 	"fmt"
 	"github.com/go-ini/ini"
+	"goframe-code/utils"
 	"time"
 )
-
-const IniFile = "ini/app.ini"
 
 type Config struct {
 	Server Server
@@ -61,7 +60,7 @@ func (l *Log) Read(cfg *ini.File) {
 }
 
 func init() {
-	cfg, err := ini.Load(IniFile)
+	cfg, err := ini.Load(utils.IniFile)
 	if err != nil {
 		fmt.Println("读取ini文件失败", err)
 	}

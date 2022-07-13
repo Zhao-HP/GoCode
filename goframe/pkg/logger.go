@@ -1,4 +1,4 @@
-package utils
+package pkg
 
 import (
 	"fmt"
@@ -6,16 +6,19 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"goframe-code/config"
+	"goframe-code/global"
 	"os"
 	"path"
 	"time"
 )
 
 var level zapcore.Level
-var Log *zap.Logger
 
 func init() {
-	Log = Zap()
+
+	fmt.Println("初始化Log")
+
+	global.Log = Zap()
 }
 
 func Zap() (logger *zap.Logger) {
