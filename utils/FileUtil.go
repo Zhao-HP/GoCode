@@ -86,3 +86,8 @@ func HasPerm(path string, perm os.FileMode) {
 		return
 	}
 }
+
+// DelFile 删除文件
+func DelFile(path string) {
+	_ = os.Remove(path)
+}
